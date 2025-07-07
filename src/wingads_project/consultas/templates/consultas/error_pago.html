@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8d7da; /* Light red background for error */
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #dc3545; /* Red color for error */
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        .home-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Ups! Ha ocurrido un Error</h1>
+        <p>{{ error }}</p>
+        <p>Hubo un problema al intentar iniciar el proceso de pago. Por favor, intenta nuevamente.</p>
+        <a href="{% url 'consultas:crear_consulta' %}" class="home-button">Intentar de Nuevo</a>
+        <a href="{% url 'consultas:home' %}" class="home-button" style="margin-left: 10px;">Volver al Inicio</a>
+    </div>
+</body>
+</html> 
